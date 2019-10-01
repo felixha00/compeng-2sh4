@@ -4,13 +4,20 @@ void letter_freq(const char word[], int freq[]){
 
     const int caseDiff = 32; // declares the difference between the cases
     const int startNum = 65; // start number
+    int a = 0;
+    int numLetters = 0;
 
     for (int a = 0; a<26; a++){ // initializes all letters to be a count of 0
         freq[a] = 0;
     }
 
-    size_t n = sizeof(word)/sizeof(word[0]); // get size of array
-    for (int i = 0; i < n; i++){
+
+    while (word[a] != '\0'){ // finds length of string;
+        numLetters++;
+        a++;
+    }
+
+    for (int i = 0; i < numLetters; i++){
 
         for (int alphabet = startNum; alphabet<startNum+26; alphabet++){
 
@@ -39,7 +46,7 @@ void letter_freq(const char word[], int freq[]){
 
 int main(){
 
-    char word[] = {'z','Z','A','A','A','A','A','A','A','A','A','A'};
+    char word[] = {"abcdefgggggisslalsjsjskasdkzxcn"};
     int freq[26];
 
     letter_freq(word, freq);

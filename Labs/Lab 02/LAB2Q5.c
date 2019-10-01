@@ -13,6 +13,7 @@ void string_copy(const char source[], char destination[], int n){
 
         printf ("%c", destination[i]);
     }
+    destination[n] = "\0";
 
 }
 
@@ -20,7 +21,7 @@ void string_copy(const char source[], char destination[], int n){
 int main(){
 
     int n = 8;
-    const char source[] = {'w','a','t','e','r','b','o','t','t','l','e'};
+    const char source[] = {"waterbottle"};
     char destination[n];
     string_copy(source, destination, n);
 }
