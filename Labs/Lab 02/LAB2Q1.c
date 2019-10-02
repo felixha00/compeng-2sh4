@@ -41,7 +41,6 @@ int main(void){
   double vectorx[] = {2,4,6};
   double vectory[] = {0,1,2};
   double vectorsum[] = {0,0,0};
-  double c;
 
   print_vector(vectorx, 3);
   add_vectors(vectorx, vectory, vectorsum, 3);
