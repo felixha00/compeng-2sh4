@@ -1,6 +1,4 @@
-import Matrix;
 import java.util.Scanner;
-
 
 public class ha_felix_400190708_lab04_section03_question1 {
 
@@ -8,7 +6,7 @@ public static void main (String[] args){
     
     
     int table[][] = {{1,2,3},{4,5,6},{7,8,9}};
-    int addingTable[][] = {{1,2,3},{4,5,6},{7,8,9},{9,9,9}};
+    int addingTable[][] = {{1,2,3},{4,5,6},{7,8,9}};
     Matrix m = new Matrix(table);
     Matrix adding = new Matrix(addingTable);
     int x = m.getElement(0,1);
@@ -51,9 +49,19 @@ public static void main (String[] args){
     Matrix mat3 = new Matrix(mat3t);  
 
     Matrix matArray[] = {mat1,mat2,mat3};
-
+    /*
     Matrix sumArray = sum(matArray);
-    System.out.printf("Summed Matrix \n%s", sumArray.MatToString());
 
+    System.out.printf("Summed Matrix \n%s", sumArray.MatToString());
+    */
+    /*
+    ==================
+    UPPER TRIANGULAR MATRIX
+    ==================
+    */
+
+    UpperTriangularMatrix uppTr = new UpperTriangularMatrix(3);
+
+    uppTr.print1DArray();
     }   
 }

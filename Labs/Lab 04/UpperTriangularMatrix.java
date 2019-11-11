@@ -1,20 +1,36 @@
-import Matrix;
-
-public class UpperTriangularMatrix implements Matrix {
+public class UpperTriangularMatrix {
     private int matSize; 
     private int matVal[]; 
     
+    public UpperTriangularMatrix(){
+        
+    }
+
     public UpperTriangularMatrix(int n) {
         
         if (n <= 0){
             n = 1;
         }
         this.matSize = n;
-        Matrix mat = new Matrix(this.matSize,this.matSize);
+        this.matVal = new int[(n+1)/2];
+        for (int i = 0; i < matVal.length; i++){
+            this.matVal[i] = 0;
+        }
     }
 
     public UpperTriangularMatrix(Matrix upTriM) throws IllegalArgumentException{
-        
+        try {
+            
+            if (upTriM.isUpperTr() == false){
+                throw new IllegalArgumentException("Error: not upper triangular")
+            }
+            else {
+                this.matSize = upTriM.getRows(); 
+            }
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println("Error: not upper triangular");
+        }
     }
 
     public int getDim(){
@@ -50,7 +66,7 @@ public class UpperTriangularMatrix implements Matrix {
     }
 
     public void print1DArray(){
-        int matValLen = matVal.length();
+        int matValLen = this.matVal.length;
         for (int i = 0; i < matValLen; i++){
             System.out.printf("%d  ", this.matVal[i]);
         }

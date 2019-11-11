@@ -148,4 +148,12 @@ public class Matrix {
         return matOut;
     }
 
+    public int getRows(){
+        return this.numRow;
+    }
+
+    public int getCols(){
+        return this.numCol;
+    }
+
 }
