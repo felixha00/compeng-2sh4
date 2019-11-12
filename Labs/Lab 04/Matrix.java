@@ -21,7 +21,6 @@ public class Matrix {
         this.numRow = table.length;
         this.numCol = table[0].length;
         this.mat = table;
-
     }
 
     public int getElement(int i, int j) throws IndexOutOfBoundsException { // works
@@ -109,7 +108,6 @@ public class Matrix {
  
             for (int i = 0; i < matArray.length; i++) {
                 if (matArray[i].numRow != rowLen || matArray[i].numCol != colLen) {
-
                     throw new ArithmeticException("Matrixes don't have the same dimensions");
                 } else
 

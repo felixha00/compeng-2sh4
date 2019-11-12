@@ -12,8 +12,6 @@ public class UpperTriangularMatrix {
         this.matVal = new int[n * (n + 1) / 2];
     }
 
-    
-
     public UpperTriangularMatrix(Matrix upTriM) throws IllegalArgumentException {
 
         if (upTriM.isUpperTr() == true) {
@@ -45,6 +43,7 @@ public class UpperTriangularMatrix {
     public int getElement(int i, int j) throws IndexOutOfBoundsException {
 
             if (i >= 0 && i < this.matSize && j >= 0 && j < this.matSize) {
+
                 int l = 0; int count = 0;
                 while (l != this.matSize) {
                     for (int k = l; k < this.matSize; k++){
@@ -69,9 +68,10 @@ public class UpperTriangularMatrix {
     }
 
     public void setElement(int x, int i, int j) throws IndexOutOfBoundsException, IllegalArgumentException {
-        if (i >= j && x != 0) { // make sure ij does not exceed reference dimension
-            throw new IllegalArgumentException("Error: i,j references under the diagonal");
-        } else if (i >= 0 && i <= this.matSize && j >= 0 && j <= this.matSize) {
+        if (i > j && x != 0) { // make sure ij does not exceed reference dimension
+            throw new IllegalArgumentException("Incorrect arguments");
+        } else if (i >= 0 && i < this.matSize && j >= 0 && j < this.matSize) {
+
             int l = 0; int count = 0;
                 while (l != this.matSize) {
                     for (int k = l; k < this.matSize; k++){ // checks every next column with one over at the start.
@@ -141,7 +141,6 @@ public class UpperTriangularMatrix {
         if (this.getDet() == 0 || b.length != this.matSize){ throw new IllegalArgumentException("Determinant is 0 or b is incorrect size");}
         else {
             // x1 = b1/a1,1
-            
             for (int o = 0; o < this.matSize; o++){
                 x[o] = b[o]/this.getElement(o, o);
             }
