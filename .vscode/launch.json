@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ha_felix_400190708_lab04_section03_question1",
+            "request": "launch",
+            "mainClass": "ha_felix_400190708_lab04_section03_question1"
+        }
+    ]
+}
