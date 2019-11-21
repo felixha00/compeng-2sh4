@@ -1,4 +1,4 @@
-class SLLNode {
+public class SLLNode {
     int value;
     SLLNode next;
     public SLLNode(int i,  SLLNode n){
