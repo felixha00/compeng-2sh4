@@ -88,7 +88,7 @@ public class ha_felix_400190708_lab05_section03_question1 {
             
             //test remove
 
-            /*
+            
             listObj2= new SLLSet(arr);
             listObj2.remove(notremove);
             System.out.println("Test 10 - remove(the value is not in the list, then do nothing):  "+notremove+"\n"+"List:\n"+listObj2.toString());
@@ -111,7 +111,7 @@ public class ha_felix_400190708_lab05_section03_question1 {
             System.out.println("Test 14 - remove(from empty list):  "+removefirst+"\n"+"List:\n"+emp.toString());
             System.out.println("size="+emp.getSize());
             System.out.println("*************************************************************"); 
-            */
+            
             
             // test union
             listObj2= new SLLSet(arr);
