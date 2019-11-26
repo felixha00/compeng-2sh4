@@ -18,6 +18,7 @@ public class SLLSet {
 
         this.numElem = sortedArray.length;
         this.fNode = new SLLNode(sortedArray[0], null); // makes the first node in the list
+
         SLLNode currentNode = this.fNode; // sets the current node to be the first one
 
         for (int i = 1; i < sortedArray.length; i++) { // cycles thru the sortedArray list
@@ -57,9 +58,12 @@ public class SLLSet {
             if (v == currentNode.value) {
                 return true;
             }
+            else if (v < currentNode.value) {
+                return false;
+            }
             currentNode = currentNode.next;
         }
-
+        
         return false;
     }
 
@@ -74,7 +78,7 @@ public class SLLSet {
 
         SLLNode current = this.fNode;
 
-        if (this.isIn(v) == true) {
+        if (this.isIn(v) == true) { // check that node with that value already exists
             return;
         }
 
@@ -96,9 +100,8 @@ public class SLLSet {
                 current = current.next;
             }
 
-            // very last node. doesn't need a condition because all cases will already be
-            // covered.
-
+            // very last node that can only be called when the v is greater than all values. 
+            
             current.next = new SLLNode(v, null);
             this.numElem++;
             return;
@@ -146,12 +149,14 @@ public class SLLSet {
             return union;
         }
 
-        SLLSet union = s.copy();
+        SLLSet union = s.copy(); // copies the original 
 
+        
         SLLNode s1 = this.fNode;
-        SLLNode s2 = s.fNode;
+        SLLNode s2 = s.fNode; 
 
-        for (int i = 0; i < this.numElem; i++) {
+        for (int i = 0; i < this.numElem; i++) { // doesn't need to check if isIn because it uses the add function 
+
             union.add(s1.value); // take union and add s1
             s1 = s1.next;
         }
